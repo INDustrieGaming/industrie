@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  {% block title %}
+  {% set title_addition = config.extra.name %}
+  <title>
+    {% if page %}
+			{% set title = page.title %}
+    {% elif section %}
+			{% set title = section.title %}
+    {% elif term %}
+			{% set title = term.name %}
+    {% elif taxonomy %}
+			{% set title = taxonomy.name %}
+    {% endif %}
+    {% if title == "" %}
+			{{title - title_addition}}
+    {% else %}
+			{{title_addition}}
+    {% endif %}
+  </title>
+  {% endblock title %}
+</head>
+
+<body>
+	<!-- Navigation -->
+	<nav class="logo">
+	</nav>
+	<nav class="menu">
+		<ul>
+			<li><a href="{{ get_url(path="@/infos.md") }}">Infos</a></li>
+			<li>Über Uns</li>
+		</ul>
+	</nav>
+  <section class="section">
+    <div class="container">
+      {% block content %} {% endblock %}
+    </div>
+  </section>
+</body>
+
+</html>
