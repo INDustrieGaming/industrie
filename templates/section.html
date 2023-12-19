@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% set news = get_section(path="news/_index.md") %}
-{% for post in news.pages %}
+{% for post in section.pages %}
 <h1><a href="{{ post.permalink }}">{{ post.title }}</a></h1>
-<div class=post>
-	{{ post.content | safe }}
-</div>
 {% endfor %}
 {% endblock content %}
