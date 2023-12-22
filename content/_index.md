@@ -1,6 +1,5 @@
 +++
-title = "Index"
+paginate_by = 4
 sort_by = "weight"
+template = "index.html"
 +++
-
-
