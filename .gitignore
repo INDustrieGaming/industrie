@@ -1,0 +1,5 @@
+~*
+node_modules/
+# Tailwind generated
+assets/css/index.css
+.hugo_build.lock
