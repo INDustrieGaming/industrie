@@ -1,0 +1,11 @@
+<aside class="hidden md:flex flex-col border border-gray-100 justify-end items-center align-top">
+		<h2>Inhalt</h2>
+    <ul class="">
+    {{ range .Pages}}
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    </li>
+    {{ end }}
+
+    </ul>
+</aside>

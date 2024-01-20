@@ -1,0 +1,19 @@
+baseURL = 'https://example.org/'
+languageCode = 'de-at'
+title = 'INDustrie Gaming'
+copyright = "© 2024 INDustrie Gaming"
+
+[[menus.main]]
+name = 'Infos'
+pageRef = '/infos'
+weight = 10
+
+[[menus.main]]
+name = 'Project X-LAN'
+pageRef = '/projectx_lan'
+weight = 20
+
+[[menus.main]]
+name = 'Über uns'
+pageRef = '/about'
+weight = 30

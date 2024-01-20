@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="flex flex-row-reverse mx-20 text-[#a4a5a6]">
+  {{ .Content }}
+		{{with site.GetPage "posts"}}
+			{{ partial "aside" .}}
+			<div class="flex flex-col px-20 mx-5 ">
+				{{ range .RegularPages }}
+				<article class="text-center flex flex-col my-5 justify-around">
+					<h2 class="text-2xl uppercase font-bold"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+					<div class="py-2">
+					{{ .Content }}
+					</div>
+				</article>
+				{{ end }}
+			</div>
+  {{ end }}
+	</div>
+{{ end }}

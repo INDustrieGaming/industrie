@@ -1,0 +1,8 @@
+<p> © {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+
+{{ with .Site.GetPage "legal"}}
+    {{ range .Pages }}
+        | <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ end }}
+{{ end }}
+</p>
