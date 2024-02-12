@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev-hugo": "hugo server --buildDrafts --disableFastRender",
+    "dev-hugo": "hugo server --buildDrafts --disableFastRender --bind=0.0.0.0 --baseURL=http://0.0.0.0:1313 -D",
     "dev-tailwind": "npx tailwindcss -i assets/css/main.css -o assets/css/index.css --watch",
     "dev": "npm run dev-hugo & npm run dev-tailwind"
   },

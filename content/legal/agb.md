@@ -12,7 +12,7 @@ Die AGB können laufend erweitert und/oder ergänzt werden. Die Teilnehmer werde
 ### §1.1 Event-Anmeldung
 
 Wer am Event teilnimmt, akzeptiert die neuste Version der AGB.
-Die aktuellste Version der AGB wird unter http://projektx-lan.at publiziert.
+Die aktuellste Version der AGB wird unter http://my-industrie.eu publiziert.
 ### §1.2 Event-Abmeldung
 
 Eine Abmeldung inkl. Rückerstattung des Ticketpreises ist nicht möglich.
