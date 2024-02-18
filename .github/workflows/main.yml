@@ -65,20 +65,22 @@ jobs:
         with:
           path: ./public
 
-  # Deployment job
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: my-industrie.eu
-        username: ${{ secrets.FTP_USER }}
-        password: ${{ secrets.FTP_PASS }}
-        local-dir: ./public
-        if: github.ref_name != "main"
-        dry-run: true
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        if: github.ref_name == 'main'
+        with:
+          server: my-industrie.eu
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./public/
+
+      - name: 📂 Sync files Dry Run
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        if: github.ref_name != 'main'
+        with:
+          server: my-industrie.eu
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./public/
+          dry-run: true
+
