@@ -1,7 +1,6 @@
 +++
 title = "AGB"
 weight = 20
-toc = true
 +++
 
 ## §1 Geltungsbreich und Anmeldung 

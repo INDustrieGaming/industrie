@@ -1,16 +1,13 @@
 {{ define "main" }}
-	<article class="text-center flex flex-col my-5 justify-around">
-		<h1 class="text-[#a4a5a6] text-3xl uppercase font-bold">{{ .Title }}</h1>
+	<article class="my-5">
+		<h1 class="text-[#a4a5a6] text-3xl uppercase font-bold text-center">{{ .Title }}</h1>
 
 		<!--{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
 		{{ $dateHuman := .Date | time.Format ":date_long" }}
 		<time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>-->
 
-		<div class="flex flex-row">
-		<!-- {{ partial "toc.html" .}} -->
-		<div class="text-[#a4a5a6] py-10 text-left mx-5 w-full justify-around px-10">
+		<div class="text-[#a4a5a6] mx-5">
 			{{ .Content }}
-		</div>
 		</div>
 		{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 	</article>

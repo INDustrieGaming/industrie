@@ -1,3 +1,3 @@
 +++
-title = "Über Uns"
+title = "Der Verein"
 +++
