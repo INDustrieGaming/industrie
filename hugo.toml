@@ -4,16 +4,21 @@ title = 'INDustrie Gaming'
 copyright = "© 2024 INDustrie Gaming"
 
 [[menus.main]]
-name = 'Infos'
-pageRef = '/infos'
+name = 'News'
+pageRef = '/'
 weight = 10
 
 [[menus.main]]
-name = 'Project X-LAN'
-pageRef = '/projectx_lan'
+name = 'Der Verein'
+pageRef = '/about'
 weight = 20
 
 [[menus.main]]
-name = 'Über uns'
-pageRef = '/about'
+name = 'Mitglied Werden'
+url = "https://discord.com/channels/273205894072893440/972789343812993075"
 weight = 30
+
+[[menus.main]]
+name = 'ProjektX LAN FAQ'
+pageRef = '/projektx'
+weight = 40

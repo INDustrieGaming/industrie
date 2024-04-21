@@ -74,13 +74,3 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./public/
 
-      - name: 📂 Sync files Dry Run
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        if: github.ref_name != 'main'
-        with:
-          server: my-industrie.eu
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: ./public/
-          dry-run: true
-

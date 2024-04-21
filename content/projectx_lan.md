@@ -1,3 +1,0 @@
-+++
-title = "Projekt X-LAN"
-+++
