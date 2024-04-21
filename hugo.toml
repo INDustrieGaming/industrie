@@ -22,3 +22,8 @@ weight = 30
 name = 'ProjektX LAN FAQ'
 pageRef = '/projektx'
 weight = 40
+
+[privacy]
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
