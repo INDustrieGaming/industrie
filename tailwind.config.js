@@ -6,6 +6,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+		require('@tailwindcss/typography'),
 		plugin(function({addBase, config}) {
 			addBase({
 				'h1': {

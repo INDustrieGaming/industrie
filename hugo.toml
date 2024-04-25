@@ -27,3 +27,8 @@ weight = 40
   [privacy.youtube]
     disable = false
     privacyEnhanced = true
+
+[markup]
+	[markup.goldmark]
+	parser.attribute.block = true
+	parser.attribute.title = true

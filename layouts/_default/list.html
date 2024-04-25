@@ -1,12 +1,18 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ if and (gt .WordCount 200 ) }}
-      {{ .Summary }}
-    {{ else }}
-      {{ .Content }}
-    {{ end }}
-  {{ end }}
+<div class="mx-20 text-[#a4a5a6]">
+	<h1 class="text-center uppercase">{{ .Title }}</h1>
+	<article class="text-center prose-invert prose-h2:uppercase prose-h1:uppercase">
+		{{ .Content }}
+	</article>
+	<div class="flex flex-col mx-5 items-center flex-grow">
+		{{ range .RegularPages }}
+		<article class="flex flex-col my-5 justify-around bg-[#2b2b2b] w-full prose-invert prose-li:list-disc">
+			<h2 class="text-center text-4xl text-[#0366d6] uppercase font-bold"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+			<div class="py-2 mx-10 my-5">
+				{{ .Content }}
+			</div>
+		</article>
+		{{ end }}
+	</div>
+</div>
 {{ end }}

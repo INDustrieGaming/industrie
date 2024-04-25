@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    p a {
+        @apply text-[#dd9933];
+    }
+
+		p li a {
+        @apply text-[#dd9933];
+		}
+}
