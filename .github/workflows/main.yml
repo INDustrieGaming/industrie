@@ -65,7 +65,7 @@ jobs:
         with:
           path: ./public
       - name: Deploy FTP
-        uses: genietim/ftp-action@releases/v4
+        uses: GenieTim/ftp-action@v4.0.1
         if: github.ref_name == 'main'
         with:
           host: ${{ secrets.FTP_SERVER }}
