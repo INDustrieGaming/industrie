@@ -64,22 +64,13 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-      - name: Deploy FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        if: github.ref_name == 'main'
+      - name: Deploy with RSync
+        uses: Burnett01/rsync-deployments@7.0.1
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: "public/"
-          server-dir: "/"
-      - name: Deploy FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        if: github.ref_name != 'main'
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: "public/"
-          server-dir: "/"
-          dry-run: true
+          switches: -avzr --delete --dry-run
+          path: public/
+          remote_path: /my-industrie.eu
+          remote_host: ${{ secrets.FTP_SERVER }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_KEY }}
+          remote_key_pass: ${{ secrets.SSH_PASSPHRASE }}
