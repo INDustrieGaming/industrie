@@ -66,10 +66,22 @@ jobs:
           path: ./public
       - name: Deploy with RSync
         uses: Burnett01/rsync-deployments@7.0.1
+        if: github.ref_name != 'main'
         with:
           switches: -avzr --delete --dry-run
           path: public/
           remote_path: /my-industrie.eu
+          remote_host: ${{ secrets.FTP_SERVER }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_KEY }}
+          remote_key_pass: ${{ secrets.SSH_PASSPHRASE }}
+      - name: Deploy with RSync
+        uses: Burnett01/rsync-deployments@7.0.1
+        if: github.ref_name == 'main'
+        with:
+          switches: -avzr --delete 
+          path: public/
+          remote_path: my-industrie.eu/
           remote_host: ${{ secrets.FTP_SERVER }}
           remote_user: ${{ secrets.SSH_USER }}
           remote_key: ${{ secrets.SSH_KEY }}
