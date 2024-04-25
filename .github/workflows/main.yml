@@ -71,8 +71,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: "public"
-          server-dir: ""
+          local-dir: "public/"
+          server-dir: "/"
       - name: Deploy FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         if: github.ref_name != 'main'
@@ -80,6 +80,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: "public"
-          server-dir: ""
+          local-dir: "public/"
+          server-dir: "/"
           dry-run: true
